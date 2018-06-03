@@ -33,8 +33,8 @@ body {
 
 .top {
     height: 40vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png);
-    /*background-color: #6161ed;*/
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png); */
+    background-color: #6161ed;
     background-size: cover;
     background-position: center;
     position: relative;
