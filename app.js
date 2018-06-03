@@ -16,6 +16,22 @@ var UIController = (function () {
         percentage: '.item__percentage'
 
     };
+    var formatNumber = function(num , type){
+        var splitNum , int, decimal;
+        num = Math.abs(num);
+        num = num.toFixed(2);
+
+        splitNum = num.split('.');
+        int = splitNum[0];
+        decimal = splitNum[1];
+
+        if(int.length > 3){
+           int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3 , 3);
+        }
+
+        
+        return (type === 'inc' ? sign = '+' : sign = '-') + ' ' + int + '.' + decimal;
+    };
 
     return {
         getInput: function () {
@@ -37,7 +53,7 @@ var UIController = (function () {
 
             newHtml = html.replace('%id%', obj.id);
             newHtml = newHtml.replace("%description%", obj.description);
-            newHtml = newHtml.replace('%value%', obj.value);
+            newHtml = newHtml.replace('%value%', formatNumber(obj.value , type));
 
             document.querySelector(element).insertAdjacentHTML("beforeend", newHtml);
         },
@@ -61,9 +77,16 @@ var UIController = (function () {
 
         },
         displayBudget: function (obj) {
-            document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
-            document.querySelector(DOMstrings.incomeLabel).textContent = obj.totalIncome;
-            document.querySelector(DOMstrings.expenseLabel).textContent = obj.totalExpenses;
+            var type;
+            if (obj.budget > 0){
+                type = 'inc';
+            }else{
+                type = 'exp';
+            }
+
+            document.querySelector(DOMstrings.budgetLabel).textContent = formatNumber(obj.budget , type);
+            document.querySelector(DOMstrings.incomeLabel).textContent = formatNumber(obj.totalIncome , 'inc');
+            document.querySelector(DOMstrings.expenseLabel).textContent = formatNumber(obj.totalExpenses , 'exp');
 
 
             if (obj.percentage > 0){
@@ -85,10 +108,11 @@ var UIController = (function () {
                 if (percentage[index] > 0){
                 current.textContent = percentage[index] + '%';
                 }else{
-                    current.textContent = '---';
+                    current.textContent = '--';
                 }
             });
         },
+        
 
         getDOMstrings: function () {
             return DOMstrings;
