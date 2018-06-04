@@ -14,7 +14,8 @@ var UIController = (function () {
         percentageLabel: '.budget__expenses--percentage',
         container: '.container',
         percentage: '.item__percentage',
-        date: '.budget__title--month'
+        date: '.budget__title--month',
+        speedometer: '.off'
 
     };
     var formatNumber = function(num , type){
@@ -99,10 +100,39 @@ var UIController = (function () {
             if (obj.percentage > 0){
                 document.querySelector(DOMstrings.percentageLabel).textContent = obj.percentage + '%';
             }else{
-                // document.querySelector(DOMstrings.percentageLabel).textContent = '0';
-                console.log(DOMstrings.percentageLabel);
+                document.querySelector(DOMstrings.percentageLabel).textContent = '--';
+                
+            }
+            if (obj.percentage > 0 && obj.percentage < 11){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-1');
+            }else if (obj.percentage > 10 && obj.percentage < 21){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-2');
+            }else if (obj.percentage > 20 && obj.percentage < 31){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-3');
+            }else if(obj.percentage > 30 && obj.percentage < 41){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-4');
+            }else if (obj.percentage > 40 && obj.percentage < 51){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-6');
+            }else if (obj.percentage > 50 && obj.percentage < 61){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-7');
+            }else if (obj.percentage > 60 && obj.percentage < 71){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-8');
+            }else if (obj.percentage > 70 && obj.percentage < 81){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-9');
+            }else if (obj.percentage > 80 && obj.percentage < 91){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-10');
+            }else if (obj.percentage > 90  && obj.percentage < 99){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-11');
+            }else if (obj.percentage === 100){
+                document.querySelector(DOMstrings.speedometer).classList.toggle('line-12');
             }
 
+            
+
+        },
+        // Covers the color of speedometer as percentage goes up
+        updateSpeedometer: function (obj){
+            
         },
         displayPercentages: function (percentage){
             var fields = document.querySelectorAll(DOMstrings.percentage);
@@ -137,6 +167,11 @@ var UIController = (function () {
             });
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
         },
+        // updateSpeedometer: function(){
+        //     if(DOMstrings.percentageLabel > 0 && DOMstrings.percentageLabel < 20){
+        //         document.querySelector(DOMstrings.percentageLabel).classList.toggle('line');
+        //     }
+        // },
         
 
         getDOMstrings: function () {
@@ -275,7 +310,7 @@ var budgetController = (function () {
 
 }());
 
-//Controls App Globally
+//Controls App Globally Calculations
 var controller = (function (budgetCtrl, UI) {
 
     var setUpEventListeners = function () {
@@ -314,6 +349,7 @@ var controller = (function (budgetCtrl, UI) {
         budgetCtrl.calculatePercentages();
         var percentages = budgetCtrl.getPercentages();
         UI.displayPercentages(percentages);
+        UI.updateSpeedometer(percentages);
     };
 
     var ctrlAddItem = function () {

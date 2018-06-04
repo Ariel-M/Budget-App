@@ -155,8 +155,47 @@ body {
     transition: all 1.3s ease-in-out;
   }
   
-  /*.container-gauge:hover*/ .gauge-c {  transform:rotate(.5turn);
+  
+  .gauge-c{  transform:rotate(.5turn);
   }
+  .line-1{
+    transform: rotate(-.05turn);
+  }
+  .line-2{
+       transform: rotate(-.05turn);
+  }
+  .line-3{
+    transform: rotate(-.1turn);
+  }
+  .line-4{
+    transform: rotate(-.15turn);
+  }
+  .line-5{
+    transform: rotate(-.2turn);
+  }
+  .line-6{
+    transform: rotate(-.25turn);
+  }
+  .line-7{
+    transform: rotate(-.3turn);
+  }
+  .line-8{
+    transform: rotate(-.35turn);
+  }
+  .line-9{
+    transform: rotate(-.4turn);
+  }
+  .line-10{
+    transform: rotate(-.45turn);
+  }
+  .line-11{
+    transform: rotate(-.475turn);
+  }
+  .line-12{
+    transform: rotate(-.5turn);
+  }
+
+
   
   .container-gauge:hover .budget__expenses--percentage { color: rgba(255,255,255,1); }
   
@@ -174,6 +213,20 @@ body {
     margin-top: 15px;
     transition: all 1s ease-out;
   }
+  .line-1, .line-2, .line-3, .line-4, .line-5, .line-6, .line-7, .line-8, .line-9, .line-10, .line-11 {
+    z-index: -2;
+    position: absolute;
+    background: #6161ed;
+    width: 200px;
+    height: 100px;
+    top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0px 0px 400px 400px;
+    transform-origin: center top;
+    transition: all 1.3s ease-in-out;
+  }
+
 
 
 /**********************************************
