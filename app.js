@@ -137,7 +137,7 @@ var UIController = (function () {
             }else if (obj.percentage >= 100){
                 document.getElementById('cover').className = '';
                 document.querySelector(DOMstrings.speedometer).classList.add('line-12');
-            }else if (obj.percentage = '--'){
+            }else{
                 document.getElementById('cover').className = '';
 
             }
@@ -172,7 +172,7 @@ var UIController = (function () {
 
             document.querySelector(DOMstrings.date).textContent = months[month] + " " + year;
         },
-        changedType: function(){
+        changedTypeExp: function(){
             var fields = document.querySelectorAll(
                 DOMstrings.inputType + ',' +
                 DOMstrings.inputDescription + ',' +
@@ -182,6 +182,17 @@ var UIController = (function () {
                 current.classList.toggle('red-focus');
             });
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
+        },
+        changedTypeInc: function(){
+            var fields = document.querySelectorAll(
+                DOMstrings.inputType + ',' +
+                DOMstrings.inputDescription + ',' +
+                DOMstrings.inputValue
+            );
+            NodeListForEach(fields , function(current){
+                current.classList.toggle('green-focus');
+            });
+            document.querySelector(DOMstrings.inputBtn).classList.toggle('green');
         },
         
         
@@ -329,6 +340,8 @@ var controller = (function (budgetCtrl, UI) {
         var DOM = UI.getDOMstrings();
 
         document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
+        // document.querySelector(DOM.inputType).addEventListener('change' , UI.changedTypeInc);
+        
 
         document.addEventListener('keypress', function (e) {
             if (e.keyCode === 13 || e.which === 13) {
@@ -336,7 +349,12 @@ var controller = (function (budgetCtrl, UI) {
             }
         });
         document.querySelector(DOM.container).addEventListener('click' , ctrlDeleteItem);
-        document.querySelector(DOM.inputType).addEventListener('change' , UI.changedType);
+        
+        document.querySelector(DOM.inputType).addEventListener('change' , UI.changedTypeExp);
+        
+            
+
+        
     };
     var ctrlDeleteItem = function (event){
         var itemID, IDsplit, type, ID;

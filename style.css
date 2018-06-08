@@ -28,7 +28,10 @@ body {
 
 .right { float: right; }
 .red { color: #FF5049 !important; }
-.red-focus:focus { border: 1px solid #FF5049 !important; }
+.red-focus:focus { border: 1px solid #FF5049 !important;  }
+.income-color{
+    color: #00C90D ; 
+}
 
 /**********************************************
 *** TOP PART
@@ -250,13 +253,16 @@ body {
     width: 55px;
     border: 1px solid #e7e7e7;
     height: 44px;
-    font-size: 18px;
+    font-size: 14px;
     color: inherit;
     background-color: #fff;
     margin-right: 10px;
     font-weight: 300;
     transition: border 0.3s;
 }
+/* .expense{
+    color: #FF0700 !important;
+} */
 
 .add__description,
 .add__value {
@@ -300,7 +306,7 @@ body {
 /***** LISTS *****/
 .container {
     
-    width: 1000px;
+    width: 1500px;
     margin: 60px auto;
 }
 
@@ -308,9 +314,11 @@ body {
     float: left;
     width: 475px;
     margin-right: 750px;
+    /* text-align: center; */
 }
 
 .expenses {
+    /* ?text-align: center; */
     float: none;
     width: 475px;
 }
@@ -320,16 +328,23 @@ h2 {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
+    
 }
 
-.income__title { color: #28B9B5; }
-.expenses__title { color: #FF5049; }
+.income__title { 
+    color: #28B9B5;
+   
+}
+.expenses__title { 
+    color: #FF5049;
+   
+}
 
 .item {
     padding: 13px;
-    
-    border-bottom: 1px solid #e7e7e7;
-    /* width: 100vw; */
+    border-bottom: 1px solid #e7e7e7;  
+    /* margin-left: 40%; */
+      
 }
 
 .item:first-child { border-top: 1px solid #e7e7e7; }
@@ -403,17 +418,7 @@ h2 {
 .unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
 .unpaid:hover .item__description { font-weight: 900; }
 
-/* @media screen and (min-width: 600px) {
-    .container{
-        width: 40%;
-
-    }
-    .top{
-        width: 100%;
-        background-color: blue;
-    }
-
-} */
+/* Responsive Design */
 
 .section {
 	clear: both;
@@ -444,13 +449,16 @@ h2 {
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 360px) {
 	.col { 
 		margin: 1% 0 1% 0%;
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
+    .col { 
+		margin: 1% 0 1% 0%;
+	}
     .span_2_of_2, .span_1_of_2 { width: 100%; }
     .expenses{
         float: none;
