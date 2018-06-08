@@ -15,7 +15,7 @@ var UIController = (function () {
         container: '.container',
         percentage: '.item__percentage',
         date: '.budget__title--month',
-        speedometer: '.off'
+        speedometer: '#cover'
 
     };
     var formatNumber = function(num , type){
@@ -104,27 +104,38 @@ var UIController = (function () {
                 
             }
             if (obj.percentage > 0 && obj.percentage < 11){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-1');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-1');
             }else if (obj.percentage > 10 && obj.percentage < 21){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-2');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-2');
             }else if (obj.percentage > 20 && obj.percentage < 31){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-3');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-3');
             }else if(obj.percentage > 30 && obj.percentage < 41){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-4');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-4');
             }else if (obj.percentage > 40 && obj.percentage < 51){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-6');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-6');
             }else if (obj.percentage > 50 && obj.percentage < 61){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-7');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-7');
             }else if (obj.percentage > 60 && obj.percentage < 71){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-8');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-8');
             }else if (obj.percentage > 70 && obj.percentage < 81){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-9');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-9');
             }else if (obj.percentage > 80 && obj.percentage < 91){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-10');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-10');
             }else if (obj.percentage > 90  && obj.percentage < 99){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-11');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-11');
             }else if (obj.percentage === 100){
-                document.querySelector(DOMstrings.speedometer).classList.toggle('line-12');
+                document.getElementById('cover').className = '';
+                document.querySelector(DOMstrings.speedometer).classList.add('line-12');
             }
 
             
