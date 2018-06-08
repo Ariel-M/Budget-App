@@ -133,10 +133,14 @@ var UIController = (function () {
             }else if (obj.percentage > 90  && obj.percentage < 99){
                 document.getElementById('cover').className = '';
                 document.querySelector(DOMstrings.speedometer).classList.add('line-11');
-            }else if (obj.percentage === 100){
+            }else if (obj.percentage >= 100){
                 document.getElementById('cover').className = '';
                 document.querySelector(DOMstrings.speedometer).classList.add('line-12');
+            }else if (obj.percentage = '--'){
+                document.getElementById('cover').className = '';
+
             }
+
 
             
 
