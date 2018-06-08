@@ -98,7 +98,8 @@ var UIController = (function () {
 
 
             if (obj.percentage > 0){
-                document.querySelector(DOMstrings.percentageLabel).textContent = obj.percentage + '%';
+                var remaining = 100 - obj.percentage;
+                document.querySelector(DOMstrings.percentageLabel).textContent = remaining + '%';
             }else{
                 document.querySelector(DOMstrings.percentageLabel).textContent = '--';
                 
@@ -182,11 +183,7 @@ var UIController = (function () {
             });
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
         },
-        // updateSpeedometer: function(){
-        //     if(DOMstrings.percentageLabel > 0 && DOMstrings.percentageLabel < 20){
-        //         document.querySelector(DOMstrings.percentageLabel).classList.toggle('line');
-        //     }
-        // },
+        
         
 
         getDOMstrings: function () {

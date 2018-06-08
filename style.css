@@ -13,12 +13,13 @@
     display: table;
     clear: both;
     
+    
 }
 
 
 body {
     color: #555;
-    font-family: Open Sans;
+    font-family: 'Libre Franklin', sans-serif;
     font-size: 16px;
     position: relative;
     height: 100vh;
@@ -35,11 +36,11 @@ body {
 
 .top {
     height: 40vh;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png); */
-    background-color: #6161ed;
+    background-color: #2980b9;
     background-size: cover;
     background-position: center;
     position: relative;
+    
 }
 
 .budget {
@@ -144,7 +145,7 @@ body {
   .gauge-c {
     z-index: -2;
     position: absolute;
-    background: linear-gradient(to right, green,yellow, red);
+    background: linear-gradient(to right, #00C90D, #F8FE00, #FF0700);
     width: 200px;
     height: 100px;
     top: 100px;
@@ -216,7 +217,7 @@ body {
   .line-1, .line-2, .line-3, .line-4, .line-5, .line-6, .line-7, .line-8, .line-9, .line-10, .line-11, .line-12 {
     z-index: -2;
     position: absolute;
-    background: #6161ed;
+    background: #2980b9;
     width: 200px;
     height: 100px;
     top: 100px;
@@ -298,7 +299,7 @@ body {
 
 /***** LISTS *****/
 .container {
-
+    
     width: 1000px;
     margin: 60px auto;
 }
@@ -306,11 +307,11 @@ body {
 .income {
     float: left;
     width: 475px;
-    margin-right: 50px;
+    margin-right: 750px;
 }
 
 .expenses {
-    float: left;
+    float: none;
     width: 475px;
 }
 
@@ -326,7 +327,9 @@ h2 {
 
 .item {
     padding: 13px;
+    
     border-bottom: 1px solid #e7e7e7;
+    /* width: 100vw; */
 }
 
 .item:first-child { border-top: 1px solid #e7e7e7; }
@@ -339,6 +342,7 @@ h2 {
 .item__value {
     float: left;
     transition: transform 0.3s;
+    
 }
 
 .item__percentage {
@@ -351,6 +355,7 @@ h2 {
     border-radius: 3px;
     width: 32px;
     text-align: center;
+    
 }
 
 .income .item__value,
@@ -410,3 +415,53 @@ h2 {
 
 } */
 
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+    .span_2_of_2, .span_1_of_2 { width: 100%; }
+    .expenses{
+        float: none;
+    }
+    .add__description{
+        width: 200px;
+    }
+    .add__value{
+        width: 90px;
+    }
+    .item{
+        width: 100vw;
+    }
+}
