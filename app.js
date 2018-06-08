@@ -183,17 +183,7 @@ var UIController = (function () {
             });
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
         },
-        changedTypeInc: function(){
-            var fields = document.querySelectorAll(
-                DOMstrings.inputType + ',' +
-                DOMstrings.inputDescription + ',' +
-                DOMstrings.inputValue
-            );
-            NodeListForEach(fields , function(current){
-                current.classList.toggle('green-focus');
-            });
-            document.querySelector(DOMstrings.inputBtn).classList.toggle('green');
-        },
+     
         
         
 
@@ -340,7 +330,7 @@ var controller = (function (budgetCtrl, UI) {
         var DOM = UI.getDOMstrings();
 
         document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
-        // document.querySelector(DOM.inputType).addEventListener('change' , UI.changedTypeInc);
+        
         
 
         document.addEventListener('keypress', function (e) {
