@@ -23,7 +23,10 @@ body {
     width: 100%;
     margin:0;
     padding: 0;
-    overflow: hidden;
+    
+}
+#overflow{
+    overflow-x: hidden;
 }
 
 .right { float: right; }
@@ -493,4 +496,5 @@ h2 {
     .container{
         text-align: unset;
     }
+    
 }
