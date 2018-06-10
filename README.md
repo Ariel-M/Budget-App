@@ -1,6 +1,6 @@
 <b>Budget App<b>
 <br>
-Live Link: 
+Live Link: https://ariel-m.github.io/Budget-App/
 <br>
 Technologies Used:
 <br>
