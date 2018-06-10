@@ -470,6 +470,9 @@ h2 {
     .expenses{
         float: none;
     }
+    .income{
+        float: none;
+    }
     .add__description{
         width: 200px;
     }
@@ -483,6 +486,6 @@ h2 {
         text-align: unset;
     }
     body{
-       width: 100vw; 
+       width: 100%; 
     }
 }
