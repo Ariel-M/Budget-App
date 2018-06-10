@@ -27,6 +27,7 @@ body {
 }
 #overflow{
     overflow-x: hidden;
+
 }
 
 .right { float: right; }
@@ -481,5 +482,7 @@ h2 {
     .container{
         text-align: unset;
     }
-    
+    body{
+       width: 100vw; 
+    }
 }

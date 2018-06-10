@@ -190,7 +190,9 @@ var UIController = (function () {
         
 
         getDOMstrings: function () {
+            
             return DOMstrings;
+            
 
         }
 
