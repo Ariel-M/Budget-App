@@ -161,6 +161,7 @@ var UIController = (function () {
                 }
             });
         },
+        // Displays current month and year
         displayDate: function (){
             var now, year, month, months;
             now = new Date();
@@ -172,6 +173,7 @@ var UIController = (function () {
 
             document.querySelector(DOMstrings.date).textContent = months[month] + " " + year;
         },
+        // If user selects the type to be expense this causes the color around the description, value, and check mark to turn red
         changedTypeExp: function(){
             var fields = document.querySelectorAll(
                 DOMstrings.inputType + ',' +
@@ -323,7 +325,7 @@ var budgetController = (function () {
 
 }());
 
-//Controls App Globally Calculations
+//Controls App Globally 
 var controller = (function (budgetCtrl, UI) {
 
     var setUpEventListeners = function () {

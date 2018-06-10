@@ -55,7 +55,6 @@ body {
     left: 50%;
     transform: translate(-50%, -20%);
     color: #fff;
-    /* z-index: 0; */
     pointer-events: none;
     
     
@@ -240,7 +239,7 @@ body {
 
 /*
  Bottom
-**/
+*/
 
 /*
  Form
@@ -319,16 +318,10 @@ List
 
 .income {
     float: left;
-    /* width: px; */
-    /* margin-right: 750px; */
-    /* text-align: center; */
 }
 
 .expenses {
-    /* ?text-align: center; */
     float: none;
-    /* width: 100px; */
-    /* margin-right: 0%; */
     position: relative;
 }
 
@@ -352,12 +345,7 @@ h2 {
 .item {
     padding: 13px;
     border-bottom: 1px solid #e7e7e7; 
-    /* width: 525px;  */
-    /* position: absolute; */
     width: 45vw;
-    /* z-index: 1; */
-    
-      
 }
 
 .item:first-child { border-top: 1px solid #e7e7e7; }
@@ -389,8 +377,6 @@ h2 {
 .income .item__value,
 .income .item__delete--btn {
     color: #28B9B5;
-    /* position: absolute;
-    z-index: 1; */
 }
 
 .expenses .item__value,
@@ -415,8 +401,7 @@ h2 {
     display: none;
 }
 
-/* .item__delete--btn:focus { outline: none; } */
-/* .item__delete--btn:active { transform: translateY(2px); } */
+
 
  .item__delete--btn { 
      display: block; 
